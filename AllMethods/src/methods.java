@@ -411,5 +411,8 @@ public class methods {
 		} else
 			System.out.println("Invalid Value");
 	}
+	public static void main(String[]args) {
+		
+	}
 
 }
