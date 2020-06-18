@@ -457,6 +457,51 @@ public class methods {
 		scanner.close();
 		System.out.println("Minimum value was: " + min + " and the max value was " + max);
 	}
+	
+	public static void inputThenPrintSumAndAverage() {
+		Scanner scanner = new Scanner(System.in);
+		double avg = 0, count = 0;
+		int sum = 0;
+		while (true) {
+			boolean check = scanner.hasNextInt();
+			if (check) {
+				sum = sum + scanner.nextInt();
+				count++;
+				continue;
+			}
+			break;
+		}
+		avg =  (Math.round(sum / count));
+		scanner.close();
+		System.out.println("SUM = " + sum + " AVG = " + (int)avg);
+	}
+	
+	public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
+		if (width > 0 && height > 0 && areaPerBucket > 0) {
+			int bucketsNeeded = 0;
+			double remain = (width * height) - (areaPerBucket * extraBuckets);
+			if (remain > 0) {
+				bucketsNeeded = (int) Math.ceil(remain / areaPerBucket);
+			}
+			return bucketsNeeded;
+
+		}
+		return -1;
+	}
+
+	public static int getBucketCount(double width, double height, double areaPerBucket) {
+		if (width > 0 && height > 0 && areaPerBucket > 0) {
+			return (int) (Math.ceil((width * height) / areaPerBucket));
+		}
+		return -1;
+	}
+
+	public static int getBucketCount(double area, double areaPerBucket) {
+		if (area > 0 && areaPerBucket > 0) {
+			return (int) Math.ceil(area / areaPerBucket);
+		}
+		return -1;
+	}
 	public static void main(String[]args) {
 		
 	}
