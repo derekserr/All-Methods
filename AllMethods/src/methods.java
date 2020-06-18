@@ -433,6 +433,30 @@ public class methods {
 		scanner.close();
 		System.out.println("The total sum of the numbers you entered is " + sum);
 	}
+	
+	public static void MinAndMax() {
+		Scanner scanner = new Scanner(System.in);
+		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, current = 0;
+		System.out.println("Enter a number:");
+		while (true) {
+			boolean check = scanner.hasNextInt();
+			if (check) {
+				current = scanner.nextInt();
+
+				if (current > max) {
+					max = current;
+				}
+				if (current < min) {
+					min = current;
+				}
+			} else {
+				break;
+			}
+			scanner.hasNextLine();
+		}
+		scanner.close();
+		System.out.println("Minimum value was: " + min + " and the max value was " + max);
+	}
 	public static void main(String[]args) {
 		
 	}
