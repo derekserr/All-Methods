@@ -413,7 +413,7 @@ public class methods {
 			System.out.println("Invalid Value");
 	}
 	
-	public static void MinAndMax() {
+	public static void sum() {
 		Scanner scanner = new Scanner(System.in);
 		int count = -1;
 		System.out.println("Enter count:");
