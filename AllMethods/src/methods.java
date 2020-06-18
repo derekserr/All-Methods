@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class methods {
 	
@@ -410,6 +411,27 @@ public class methods {
 			}
 		} else
 			System.out.println("Invalid Value");
+	}
+	
+	public static void MinAndMax() {
+		Scanner scanner = new Scanner(System.in);
+		int count = -1;
+		System.out.println("Enter count:");
+		while (count < 0) {
+			count = scanner.nextInt();
+			if (count < 0) {
+				System.out.println("Invalid Entry, try again");
+			}
+		}
+		int sum = 0;
+		System.out.println("Enter the numbers you want to be added together:");
+		while (count > 0) {
+			int userNum = scanner.nextInt();
+			sum = sum + userNum;
+			count--;
+		}
+		scanner.close();
+		System.out.println("The total sum of the numbers you entered is " + sum);
 	}
 	public static void main(String[]args) {
 		
