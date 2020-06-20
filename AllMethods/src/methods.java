@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class methods {
-	
+
 	public static long toMilesPerHour(double kilometresPerHour) {
 		if (kilometresPerHour < 0) {
 			return -1;
@@ -392,6 +392,7 @@ public class methods {
 		}
 		return -1;
 	}
+
 	public static void printSquareStar(int number) {
 		if (number > 4) {
 			for (int i = 0; i < number; i++) {
@@ -407,12 +408,12 @@ public class methods {
 					} else {
 						System.out.print(" ");
 					}
-				}  
+				}
 			}
 		} else
 			System.out.println("Invalid Value");
 	}
-	
+
 	public static void sum() {
 		Scanner scanner = new Scanner(System.in);
 		int count = -1;
@@ -433,7 +434,7 @@ public class methods {
 		scanner.close();
 		System.out.println("The total sum of the numbers you entered is " + sum);
 	}
-	
+
 	public static void MinAndMax() {
 		Scanner scanner = new Scanner(System.in);
 		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, current = 0;
@@ -457,7 +458,7 @@ public class methods {
 		scanner.close();
 		System.out.println("Minimum value was: " + min + " and the max value was " + max);
 	}
-	
+
 	public static void inputThenPrintSumAndAverage() {
 		Scanner scanner = new Scanner(System.in);
 		double avg = 0, count = 0;
@@ -471,11 +472,11 @@ public class methods {
 			}
 			break;
 		}
-		avg =  (Math.round(sum / count));
+		avg = (Math.round(sum / count));
 		scanner.close();
-		System.out.println("SUM = " + sum + " AVG = " + (int)avg);
+		System.out.println("SUM = " + sum + " AVG = " + (int) avg);
 	}
-	
+
 	public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
 		if (width > 0 && height > 0 && areaPerBucket > 0) {
 			int bucketsNeeded = 0;
@@ -502,8 +503,41 @@ public class methods {
 		}
 		return -1;
 	}
-	public static void main(String[]args) {
-		
+
+	public static int[] getIntegers(int number) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter " + number + " integer values");
+		int[] values = new int[number];
+		for (int i = 0; i < number; ++i) {
+			values[i] = scanner.nextInt();
+		}
+		scanner.close();
+		return values;
+	}
+
+	public static int[] sortInteger(int[] intList) {
+		int temp = 0;
+		for (int i = 0; i < intList.length; i++) {
+			for (int j = i; j < intList.length; j++) {
+				if (intList[i] < intList[j]) {
+					temp=intList[i];
+					intList[i]=intList[j];
+					intList[j]=temp;
+				}
+			}
+		}
+		return intList;
+	}
+
+	public static void returnArray(int[] intList) {
+		for (int i = 0; i < intList.length; i++) {
+			System.out.print(intList[i]+" ");
+		}
+	}
+
+	public static void main(String[] args) {
+		returnArray(sortInteger(getIntegers(5)));
+
 	}
 
 }
