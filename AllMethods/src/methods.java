@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class methods {
@@ -545,10 +546,19 @@ public class methods {
 		System.out.println("Minimum number in the array is:" + min);
 		;
 	}
+	public static void reverse(int[]intList) {
+		for(int i=0;i<intList.length/2;i++) {
+			int temp=intList[i];
+			intList[i]=intList[intList.length-i-1];
+			intList[intList.length-1-i]=temp;
+			
+		}
+		System.out.println(Arrays.toString(intList));
+	}
 
 	public static void main(String[] args) {
 		// returnArray(sortInteger(getIntegers(5)));
-		findMin(getIntegers(5));
+		reverse(getIntegers(5));
 
 	}
 
