@@ -520,9 +520,9 @@ public class methods {
 		for (int i = 0; i < intList.length; i++) {
 			for (int j = i; j < intList.length; j++) {
 				if (intList[i] < intList[j]) {
-					temp=intList[i];
-					intList[i]=intList[j];
-					intList[j]=temp;
+					temp = intList[i];
+					intList[i] = intList[j];
+					intList[j] = temp;
 				}
 			}
 		}
@@ -531,12 +531,24 @@ public class methods {
 
 	public static void returnArray(int[] intList) {
 		for (int i = 0; i < intList.length; i++) {
-			System.out.print(intList[i]+" ");
+			System.out.print(intList[i] + " ");
 		}
 	}
 
+	public static void findMin(int[] intList) {
+		int min = Integer.MAX_VALUE;
+		for (int i = 0; i < intList.length; i++) {
+			if(intList[i]<min) {
+				min=intList[i];
+			}
+		}
+		System.out.println("Minimum number in the array is:" + min);
+		;
+	}
+
 	public static void main(String[] args) {
-		returnArray(sortInteger(getIntegers(5)));
+		// returnArray(sortInteger(getIntegers(5)));
+		findMin(getIntegers(5));
 
 	}
 
