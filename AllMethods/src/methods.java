@@ -539,26 +539,26 @@ public class methods {
 	public static void findMin(int[] intList) {
 		int min = Integer.MAX_VALUE;
 		for (int i = 0; i < intList.length; i++) {
-			if(intList[i]<min) {
-				min=intList[i];
+			if (intList[i] < min) {
+				min = intList[i];
 			}
 		}
 		System.out.println("Minimum number in the array is:" + min);
 		;
 	}
-	public static void reverse(int[]intList) {
-		for(int i=0;i<intList.length/2;i++) {
-			int temp=intList[i];
-			intList[i]=intList[intList.length-i-1];
-			intList[intList.length-1-i]=temp;
-			
+
+	public static void reverse(int[] intList) {
+		for (int i = 0; i < intList.length / 2; i++) {
+			int temp = intList[i];
+			intList[i] = intList[intList.length - i - 1];
+			intList[intList.length - 1 - i] = temp;
 		}
 		System.out.println(Arrays.toString(intList));
 	}
 
 	public static void main(String[] args) {
-		// returnArray(sortInteger(getIntegers(5)));
-		reverse(getIntegers(5));
+		int [] derek= {12,3,4,1,3,5};
+		System.out.println(Arrays.toString(derek));
 
 	}
 
